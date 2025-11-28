@@ -1,0 +1,103 @@
+{
+  "barbershop": {
+    "id": "iriri-barbearia-club",
+    "name": "Iriri Barbearia Club",
+    "displayName": "Iriri Barbearia Club ✂️",
+    "segment": "Barbearia / cuidados masculinos",
+    "yearsOfTradition": 20,
+    "instagram": "@iriribarbeariaclub",
+    "slogan": "Experiência, estilo e tradição em cada corte.",
+    "shortDescription": "Experiência única em cada corte, com mais de 20 anos de tradição em estilo, atitude e atendimento de primeira.",
+    "longDescription": "A Iriri Barbearia Club é uma barbearia com mais de 20 anos de tradição no Rio de Janeiro, unindo experiência, estilo e atitude em um ambiente pensado para quem leva o visual a sério.\n\nMais do que cortar cabelo e fazer a barba, a Iriri entrega uma experiência completa: resenha, cuidado, atenção aos detalhes e um time de barbeiros que é referência na região. Cada corte é tratado como único, respeitando o estilo e a personalidade de cada cliente.\n\nHoje a marca está presente nos principais shoppings da cidade, com unidades no Barra Shopping e no Madureira Shopping, sempre com o mesmo compromisso: atendimento de primeira, cortes modernos e uma vibe que faz você querer voltar.",
+    "units": [
+      {
+        "id": "iriri-barra-shopping",
+        "name": "Iriri Barbearia Club – Barra Shopping",
+        "shopping": "Barra Shopping",
+        "slug": "iriri-barra-shopping",
+        "neighborhood": "Barra da Tijuca",
+        "city": "Rio de Janeiro",
+        "state": "RJ",
+        "country": "Brasil",
+        "address": null,
+        "zipCode": null,
+        "instagram": "@iriribarbeariaclub.barra",
+        "phone": "(21) 3841-3883",
+        "whatsapp": "(21) 97197-3589",
+        "highlightPhrase": "Mais de 20 anos de tradição em um dos shoppings mais conhecidos do Rio. Corte, barba e experiência premium na Barra da Tijuca.",
+        "description": "Na unidade Barra Shopping, a Iriri Barbearia Club leva toda a sua tradição para o coração da Barra da Tijuca. Aqui, cada atendimento é pensado para entregar serviço completo: corte, barba e aquele cuidado no detalhe que faz a diferença.\n\nA barbearia conta com uma equipe de profissionais qualificados, ambiente aconchegante dentro do shopping e uma rotina de promoções e ações especiais para os clientes. É o lugar ideal para quem quer sair na régua e aproveitar o melhor da Barra no mesmo rolê.",
+        "openingHours": null,
+        "locationNotes": "Unidade localizada dentro do Barra Shopping, na Barra da Tijuca – Rio de Janeiro/RJ."
+      },
+      {
+        "id": "iriri-madureira-shopping",
+        "name": "Iriri Barbearia Club – Madureira Shopping",
+        "shopping": "Madureira Shopping",
+        "slug": "iriri-madureira-shopping",
+        "neighborhood": "Madureira",
+        "city": "Rio de Janeiro",
+        "state": "RJ",
+        "country": "Brasil",
+        "address": "Estrada do Portela, 222 – 2º piso, loja 288",
+        "zipCode": "21351-050",
+        "instagram": "@iriribarbeariaclubmadureira",
+        "phone": null,
+        "whatsapp": "(21) 99514-9131",
+        "highlightPhrase": "Estilo de verdade tem endereço certo: Iriri Barbearia Club do Madu.",
+        "description": "A unidade do Madureira Shopping é a cara do bairro: autêntica, movimentada e cheia de personalidade. Na Iriri Barbearia Club do Madu, estilo tem hora marcada: o cliente escolhe o melhor horário, agenda pelo WhatsApp ou pelo link da bio e chega só para sentar na cadeira e aproveitar.\n\nO time de barbeiros é especializado em cortes modernos, degradês, barbas alinhadas e aquele acabamento “na régua” que virou marca registrada da casa. Tudo isso em um ambiente de resenha, música boa e atendimento de primeira, dentro de um dos shoppings mais tradicionais da Zona Norte.",
+        "openingHours": null,
+        "locationNotes": "Unidade localizada no 2º piso do Madureira Shopping, loja 288 – Rio de Janeiro/RJ."
+      }
+    ],
+    "services": [
+      {
+        "id": "corte-masculino",
+        "name": "Corte Masculino",
+        "description": "Corte moderno, com acabamento na régua e finalização de acordo com o estilo do cliente.",
+        "durationInMinutes": 40,
+        "basePrice": null,
+        "active": true
+      },
+      {
+        "id": "barba",
+        "name": "Barba",
+        "description": "Desenho, alinhamento e hidratação da barba, com toalha quente e produtos selecionados.",
+        "durationInMinutes": 30,
+        "basePrice": null,
+        "active": true
+      },
+      {
+        "id": "corte-barba",
+        "name": "Corte + Barba",
+        "description": "Pacote completo para sair com cabelo e barba impecáveis em uma única visita.",
+        "durationInMinutes": 60,
+        "basePrice": null,
+        "active": true
+      },
+      {
+        "id": "acabamento-pezinho",
+        "name": "Acabamento / Pezinho",
+        "description": "Manutenção rápida do corte, focada em alinhar laterais, nuca e contornos.",
+        "durationInMinutes": 20,
+        "basePrice": null,
+        "active": true
+      },
+      {
+        "id": "plano-corte-assinatura",
+        "name": "Plano de Corte / Assinatura",
+        "description": "Modelo de assinatura com cortes recorrentes no mês, inspirado no conceito de corte na régua sem limites para quem gosta de manter o visual sempre em dia.",
+        "durationInMinutes": null,
+        "basePrice": null,
+        "isPlan": true,
+        "active": true
+      }
+    ],
+    "phrases": [
+      "Experiência única em cada corte ✂️",
+      "Mais de 20 anos de tradição em estilo, atitude e atendimento.",
+      "Na Iriri Barbearia Club, corte, resenha e estilo andam juntos.",
+      "Na Iriri Barbearia Club – Madureira, estilo tem hora marcada. Agenda com a gente!",
+      "Estilo de verdade tem endereço certo: Iriri Barbearia Club do Madu."
+    ]
+  }
+}
