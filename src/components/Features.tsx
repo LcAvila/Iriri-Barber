@@ -176,26 +176,8 @@ export const Features = () => {
                   alt={feature.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               </motion.div>
             ))}
-
-            {/* Active feature overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8 z-10">
-              <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="bg-card/80 backdrop-blur-sm rounded-lg border border-border/50 p-4 md:p-6 shadow-dark">
-                  <h4 className="text-xl md:text-2xl font-bold text-foreground mb-1 md:mb-2">
-                    {features[activeStep].title}
-                  </h4>
-                  <p className="text-sm md:text-base text-muted-foreground">{features[activeStep].content}</p>
-                </div>
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </div>
