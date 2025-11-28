@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
     <footer id="footer" className="bg-gradient-dark border-t border-border/50" aria-label="Rodapé do site">
-      <div className="container px-0 py-12">
+      <div className="container max-w-7xl mx-auto px-5 md:px-8 lg:px-10 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <div className="flex items-start justify-between">
-              <div className="pl-0">
+              <div>
                 <h2 className="text-2xl font-bold mb-4 bg-gradient-gold bg-clip-text text-transparent">Iriri Barbearia Club</h2>
                 <p className="text-muted-foreground max-w-md">
                   Mais de 20 anos de tradição em cortes masculinos. Duas unidades no Rio de Janeiro: Barra Shopping e Madureira Shopping.
@@ -22,7 +22,7 @@ export const Footer = () => {
             <h3 className="font-semibold mb-4 text-foreground">Links Rápidos</h3>
             <ul className="space-y-2">
               <li><Link to="/#hero" className="text-muted-foreground hover:text-primary transition-colors">Início</Link></li>
-              <li><Link to="/quem-somos" className="text-muted-foreground hover:text-primary transition-colors">Quem Somos</Link></li>
+              <li><Link to="/#history" className="text-muted-foreground hover:text-primary transition-colors">Quem Somos</Link></li>
               <li><Link to="/#stores" className="text-muted-foreground hover:text-primary transition-colors">Unidades</Link></li>
               <li><Link to="/admin" className="text-muted-foreground hover:text-primary transition-colors">Área do Admin</Link></li>
             </ul>

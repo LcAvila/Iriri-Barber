@@ -29,7 +29,7 @@ export const Navbar = () => {
     setTimeout(() => {
       const element = document.getElementById(id);
       if (element) {
-        const navHeight = 130;
+        const navHeight = isScrolled ? 90 : 130;
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - navHeight;
         window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -46,22 +46,22 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30">
+      <div className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/30 transition-all duration-300 ${isScrolled ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'}`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-10 text-xs sm:text-sm">
-            <div className="flex items-center gap-4 text-muted-foreground">
+          <div className="flex items-start justify-between gap-2 py-1 min-h-10 text-[11px] sm:text-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 text-muted-foreground">
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-primary" />
+                <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
                 <a href="tel:+552138413883" className="hover:text-primary">Barra: (21) 3841-3883</a>
               </div>
-              <div className="hidden sm:flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-primary" />
+              <div className="flex items-center gap-2 mt-1 sm:mt-0">
+                <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
                 <a href="tel:+5521995149131" className="hover:text-primary">Madureira: (21) 99514-9131</a>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-2 text-muted-foreground">
-              <Clock className="w-3.5 h-3.5 text-primary" />
-              <span>Seg à Sáb: 10h às 22h · Dom: 12h às 21h</span>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary" />
+              <span>Seg-Sáb: 10h–22h · Dom: 12h–21h</span>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed ${isScrolled ? 'top-0' : 'top-10'} left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-background/95 backdrop-blur-xl border-b border-border/30 shadow-lg shadow-black/10"
           : "bg-background/80 backdrop-blur-md"
@@ -78,7 +78,7 @@ export const Navbar = () => {
       aria-label="Navegação principal"
     >
       <div className="container mx-auto px-5">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-20 lg:h-28">
           {/* Logo com efeito moderno */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -91,7 +91,7 @@ export const Navbar = () => {
               <img 
                 src={logoIriri} 
                 alt="Iriri Barbearia Club" 
-                className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -112,26 +112,15 @@ export const Navbar = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
                   >
-                    {item.id ? (
-                      <Link
-                        to={item.id}
-                        className="relative px-4 py-2 text-sm lg:text-base text-foreground/80 hover:text-foreground transition-all duration-300 group"
-                        role="menuitem"
-                      >
-                        <span className="relative z-10">{item.name}</span>
-                        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                      </Link>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={() => scrollToSection(item.id)}
-                        className="relative px-4 py-2 text-sm lg:text-base text-foreground/80 hover:text-foreground transition-all duration-300 group"
-                        role="menuitem"
-                      >
-                        <span className="relative z-10">{item.name}</span>
-                        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                      </button>
-                    )}
+                    <button
+                      type="button"
+                      onClick={() => scrollToSection(item.id)}
+                      className="relative px-4 py-2 text-sm lg:text-base text-foreground/80 hover:text-foreground transition-all duration-300 group"
+                      role="menuitem"
+                    >
+                      <span className="relative z-10">{item.name}</span>
+                      <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    </button>
                   </motion.div>
                 </li>
               ))}
@@ -212,31 +201,20 @@ export const Navbar = () => {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.2, delay: index * 0.05 }}
                         >
-                          {item.id ? (
-                            <Link
-                              to={item.id}
-                              onClick={() => setIsOpen(false)}
-                              className="flex items-center justify-between px-6 py-4 text-foreground hover:bg-accent/30 transition-all duration-300 group border-b border-border/10"
-                            >
-                              <div className="flex items-center gap-3">
-                                <div className="w-1 h-8 bg-gradient-gold rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-                                <span className="font-medium">{item.name}</span>
-                              </div>
-                              <ChevronDown className="w-4 h-4 text-muted-foreground transform -rotate-90" />
-                            </Link>
-                          ) : (
-                            <button
-                              type="button"
-                              onClick={() => scrollToSection(item.id)}
-                              className="flex items-center justify-between w-full px-6 py-4 text-foreground hover:bg-accent/30 transition-all duration-300 group border-b border-border/10"
-                            >
-                              <div className="flex items-center gap-3">
-                                <div className="w-1 h-8 bg-gradient-gold rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-                                <span className="font-medium">{item.name}</span>
-                              </div>
-                              <ChevronDown className="w-4 h-4 text-muted-foreground transform -rotate-90" />
-                            </button>
-                          )}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              scrollToSection(item.id);
+                              setIsOpen(false);
+                            }}
+                            className="flex items-center justify-between w-full px-6 py-4 text-foreground hover:bg-accent/30 transition-all duration-300 group border-b border-border/10"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="w-1 h-8 bg-gradient-gold rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                              <span className="font-medium">{item.name}</span>
+                            </div>
+                            <ChevronDown className="w-4 h-4 text-muted-foreground transform -rotate-90" />
+                          </button>
                         </motion.div>
                       </li>
                     ))}
